@@ -1,0 +1,46 @@
+hostname spine1
+
+
+interface etheth1
+no switchport
+ip address 10.0.0.0/31
+
+interface etheth2
+no switchport
+ip address 10.0.0.4/31
+
+interface etheth3
+no switchport
+ip address 10.0.0.8/31
+
+interface etheth4
+no switchport
+ip address 10.0.0.12/31
+
+interface etheth5
+no switchport
+ip address 10.0.0.16/31
+
+interface etheth6
+no switchport
+ip address 10.0.0.20/31
+
+interface etheth7
+no switchport
+ip address 10.0.0.24/31
+
+interface etheth8
+no switchport
+ip address 10.0.0.28/31
+
+
+router bgp 65000
+
+neighbor 10.0.0.1 remote-as 65002
+neighbor 10.0.0.5 remote-as 65003
+neighbor 10.0.0.9 remote-as 65004
+neighbor 10.0.0.13 remote-as 65005
+neighbor 10.0.0.17 remote-as 65006
+neighbor 10.0.0.21 remote-as 65007
+neighbor 10.0.0.25 remote-as 65008
+neighbor 10.0.0.29 remote-as 65009

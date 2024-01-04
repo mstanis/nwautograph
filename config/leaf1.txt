@@ -1,0 +1,16 @@
+hostname leaf1
+
+
+interface etheth49
+no switchport
+ip address 10.0.0.1/31
+
+interface etheth50
+no switchport
+ip address 10.0.0.3/31
+
+
+router bgp 65002
+
+neighbor 10.0.0.0 remote-as 65000
+neighbor 10.0.0.2 remote-as 65001
