@@ -1,19 +1,19 @@
 ---
-dc_name: 'DC1'
+dc_name: 'DC1'  # Data Centr name
 
 spines:
-  number: 2
+  number: 2 # ammount of spines to be added
   connect_to: leaves
-  fabric_interfaces: '1-26'
+  fabric_interfaces: '1-26' # Interfaces to be connected to leaves
 
 leaves:
   number: 8
   connect_to: spines
-  fabric_interfaces: '49-52'
-  access_interfaces: '1-46'
+  fabric_interfaces: '49-52' # Interfaces connecting to spine 
+  access_interfaces: '1-46' 
   span_interfaces: '47-48'
 
 ip:
-  loopbacks: 10.0.1.0/27
-  fabric_ptp: 10.0.0.0/24
-  asn_range: 65000-65032
+  loopbacks: 10.0.1.0/27  # subnet used for loopbacks 
+  fabric_ptp: 10.0.0.0/24 # point to point interfaces 
+  asn_range: 65000-65032 # BGP AS pool

@@ -6,9 +6,11 @@ import yaml
 import jinja2
 
 
+# get configuration variables
 with open('etc/cfg.yml', 'r') as cfg:
     config = yaml.load(cfg.read(), Loader=yaml.Loader)
 
+# create NetwrkX graph
 G = nx.DiGraph(label=config['dc_name'], ordering='out', fontsize=20,
                labelloc='t')
 
@@ -16,6 +18,7 @@ G = nx.DiGraph(label=config['dc_name'], ordering='out', fontsize=20,
 spines = []
 leaves = []
 
+# generate IP and ASN
 loopbacks = list(IPNetwork(config['ip']['loopbacks']).subnet(32))
 f_ptp_subnet = list(IPNetwork(config['ip']['fabric_ptp']).subnet(31))
 
@@ -30,6 +33,7 @@ f_if_list_leaf = list(range(int(f_if_range_leaf[0]),
 f_asn_range = config['ip']['asn_range'].split('-')
 f_asn_list = list(range(int(f_asn_range[0]), int(f_asn_range[1])+1))
 
+# add spines
 for i in range(1, int(config['spines']['number'])+1):
     s_name = 'spine' + str(i)
     s_loopback = str(loopbacks.pop(0))
@@ -43,6 +47,7 @@ for i in range(1, int(config['spines']['number'])+1):
                bgp_neigh={}, fillcolor='grey88')
     spines.append(s_name)
 
+# add leaves
 for i in range(1, int(config['leaves']['number'])+1):
     l_name = 'leaf' + str(i)
     l_loopback = str(loopbacks.pop(0))
@@ -54,6 +59,7 @@ for i in range(1, int(config['leaves']['number'])+1):
                fontsize=10, fillcolor='honeydew2')
     leaves.append(l_name)
 
+# connect leaves to spines
 for leaf in leaves:
     for sp in spines:
         f_ptp = f_ptp_subnet.pop(0)
@@ -67,8 +73,6 @@ for leaf in leaves:
                                          G.nodes[leaf]['asn']})
         G.nodes[leaf]['bgp_neigh'].update({spine_ip.split('/')[0]:
                                            G.nodes[sp]['asn']})
-        print("Workong on " + leaf + ' eth' + str(leaf_if))
-        print(sp + '   ' + str(spine_if))
         G.add_edge(sp, leaf, l_ptp=f_ptp, decorate='true',
                    e_taillabel='e' + str(spine_if) + ' ip: .' +
                    spine_ip.split('/')[0].split('.')[-1],
@@ -76,11 +80,13 @@ for leaf in leaves:
                    leaf_ip.split('/')[0].split('.')[-1],
                    fontsize=6, arrowhead='none')
 
+# draw master topology
 VG = nx.drawing.nx_agraph.to_agraph(G)
 VG.layout('dot')
 VG.draw('diagrams/topology.svg', format='svg')
 
 
+# draw leaf to spine relation
 for le in leaves:
     l_neighbors = list(G.predecessors(le))
     l_sub = l_neighbors + [le]
@@ -96,6 +102,7 @@ for le in leaves:
     nx.drawing.nx_agraph.write_dot(L, 'diagrams/' + le + '.dot')
     LG.draw('diagrams/' + le + '.svg', format='svg')
 
+# Parse Jinja2 template and save configuration for each node
 for sw in G.nodes:
     t_vars = G.nodes[sw]
     with open('templates/switch.j2', 'r') as template_f:
