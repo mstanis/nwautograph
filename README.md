@@ -12,6 +12,15 @@ In order to use it, you will need to install the following:
 - Graphviz
 - Pygraphviz (Python library)
 
+Install the prerequisites using the following command:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+(venv) $ pip install --upgrade pip
+(venv) $ pip install -r requirements.txt
+```
+*You may need to install additional pygraphviz packages*
+
 ## Features
 
 - Retrieves global variables from `etc/cfg.yml`.
