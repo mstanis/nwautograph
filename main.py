@@ -26,7 +26,7 @@ def main() -> None:
     bgp_as_numbers = get_range(config["ip"]["asn_range"])
 
     """Create spine nodes"""
-    spines = []
+    spines: list[Node] = []
     for i in range(int(config["spines"]["number"])):
         spine = Node(
             name=f"spine{i + 1}",
@@ -38,7 +38,7 @@ def main() -> None:
         spines.append(spine)
 
     """Create leaf nodes"""
-    leaves = []
+    leaves: list[Node] = []
     for i in range(int(config["leaves"]["number"])):
         leaf = Node(
             name=f"leaf{i + 1}",
@@ -50,7 +50,7 @@ def main() -> None:
         leaves.append(leaf)
 
     """Create edges (links between nodes)"""
-    edges = []
+    edges: list[Edge] = []
     for leaf in leaves:
         for spine in spines:
             subnet = subnets.pop(0)
