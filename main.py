@@ -114,11 +114,11 @@ def main() -> None:
     VG.draw("diagrams/topology.svg", format="svg")
 
     # draw leaf to spine relation
-    for le in leaves:
-        leaf_neighbors = list(G.predecessors(le))
-        leaf_sub = leaf_neighbors + [le]
+    for leaf in leaves:
+        leaf_neighbors = list(G.predecessors(leaf))
+        leaf_sub = leaf_neighbors + [leaf]
         L = G.subgraph(leaf_sub)
-        L.nodes[le]["URL"] = "../config/" + le + ".txt"
+        L.nodes[leaf]["URL"] = "../config/" + leaf + ".txt"
         for leaf_edge in L.edges:
             L.edges[leaf_edge]["label"] = L.edges[leaf_edge]["leaf_ptp"]
             L.edges[leaf_edge]["taillabel"] = L.edges[leaf_edge]["e_taillabel"]
@@ -126,8 +126,8 @@ def main() -> None:
 
         LG = nx.drawing.nx_agraph.to_agraph(L)
         LG.layout("dot")
-        nx.drawing.nx_agraph.write_dot(L, "diagrams/" + le + ".dot")
-        LG.draw("diagrams/" + le + ".svg", format="svg")
+        nx.drawing.nx_agraph.write_dot(L, "diagrams/" + leaf + ".dot")
+        LG.draw("diagrams/" + leaf + ".svg", format="svg")
 
     # Parse Jinja2 template and save configuration for each node
     for sw in G.nodes:
