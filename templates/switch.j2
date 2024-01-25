@@ -1,9 +1,9 @@
 hostname {{ hostname }}
 
-{% for interface in f_if_ip.keys() %}
+{% for interface in if_ip.keys() %}
 interface eth{{ interface }}
 no switchport
-ip address {{ f_if_ip[interface] }}
+ip address {{ if_ip[interface] }}
 {% endfor %}
 
 router bgp {{ asn }}
