@@ -95,19 +95,15 @@ def main() -> None:
             G.nodes[leaf]["bgp_neigh"].update(
                 {spine_ip.split("/")[0]: G.nodes[sp]["asn"]}
             )
+            spine_ip_last_octet = spine_ip.split("/")[0].split(".")[-1]
+            leaf_ip_last_octet = leaf_ip.split("/")[0].split(".")[-1]
             G.add_edge(
                 sp,
                 leaf,
                 leaf_ptp=ptp,
                 decorate="true",
-                e_taillabel="e"
-                + str(spine_if)
-                + " ip: ."
-                + spine_ip.split("/")[0].split(".")[-1],
-                e_headlabel="e"
-                + str(leaf_if)
-                + " ip: ."
-                + leaf_ip.split("/")[0].split(".")[-1],
+                e_taillabel=f"e{spine_if} ip: .{spine_ip_last_octet}",
+                e_headlabel=f"e{leaf_if} ip: .{leaf_ip_last_octet}",
                 fontsize=6,
                 arrowhead="none",
             )
