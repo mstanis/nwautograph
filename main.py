@@ -127,12 +127,12 @@ def main() -> None:
 
     # Parse Jinja2 template and save configuration for each node
     for sw in G.nodes:
-        t_vars = G.nodes[sw]
-        with open("templates/switch.j2", "r") as template_f:
-            templ = jinja2.Template(template_f.read())
+        template_data = G.nodes[sw]
+        with open("templates/switch.j2", "r") as file:
+            template = jinja2.Template(file.read())
 
-        with open("config/" + sw + ".txt", "w") as config_o:
-            config_o.write(templ.render(t_vars))
+        with open(f"config/{sw}.txt", "w") as file:
+            file.write(template.render(template_data))
 
 
 def get_range(my_range: str) -> list:
