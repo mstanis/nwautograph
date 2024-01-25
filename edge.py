@@ -13,7 +13,7 @@ class Edge:
         self.leaf = leaf
         self.subnet = subnet
 
-    def generate(self) -> dict:
+    def draw(self) -> dict:
         arguments = {
             "u_of_edge": self.spine.name,
             "v_of_edge": self.leaf.name,

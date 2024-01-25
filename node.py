@@ -17,7 +17,7 @@ class Node:
         """Fetch first available interface in list"""
         return self.interfaces.pop(0)
 
-    def generate(self) -> dict:
+    def draw(self) -> dict:
         """Generate arguments necessary to draw node"""
         label = f"{self.name}\n"
         label += f"lo0: {self.loopback}\n"
@@ -47,7 +47,7 @@ class Node:
 
         return arguments
 
-    def template(self):
+    def template_data(self):
         """Generate jinja template input"""
         return {
             "hostname": self.name,

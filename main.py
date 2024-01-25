@@ -82,7 +82,7 @@ def main() -> None:
             template = jinja2.Template(file.read())
 
         with open(f"config/{node.name}.txt", "w") as file:
-            file.write(template.render(node.template()))
+            file.write(template.render(node.template_data()))
 
 
 def get_range(my_range: str) -> list:

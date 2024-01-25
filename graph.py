@@ -5,11 +5,7 @@ from edge import Edge
 
 class Graph:
     def __init__(
-        self,
-        label: str,
-        spines: list[Node],
-        leaves: list[Node],
-        edges: list[Edge],
+        self, label: str, spines: list[Node], leaves: list[Node], edges: list[Edge]
     ):
         self.label = label
         self.spines = spines
@@ -17,6 +13,7 @@ class Graph:
         self.edges = edges
 
     def draw_topology(self):
+        """Draw topology file"""
         self.graph = nx.DiGraph(
             label=self.label,
             ordering="out",
@@ -25,17 +22,17 @@ class Graph:
         )
 
         for node in self.spines + self.leaves:
-            self.graph.add_node(**node.generate())
+            self.graph.add_node(**node.draw())
 
         for edge in self.edges:
-            self.graph.add_edge(**edge.generate())
+            self.graph.add_edge(**edge.draw())
 
         VG = nx.drawing.nx_agraph.to_agraph(self.graph)
         VG.layout("dot")
         VG.draw("diagrams/topology.svg", format="svg")
 
     def draw_nodes(self):
-        """draw leaf to spine relation"""
+        """Draw leaf to spine relation"""
         for leaf in self.leaves:
             leaf_neighbors = list(self.graph.predecessors(leaf.name))
             leaf_sub = leaf_neighbors + [leaf.name]
