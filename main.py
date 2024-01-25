@@ -67,7 +67,7 @@ def main() -> None:
             int=leaf_interfaces.copy(),
             if_ip={},
             bgp_neigh={},
-            URL=leaf_name + ".svg",
+            URL=f"{leaf_name}.svg",
             headport="s",
             asn=leaf_as,
             fontsize=10,
@@ -114,7 +114,7 @@ def main() -> None:
         leaf_neighbors = list(G.predecessors(leaf))
         leaf_sub = leaf_neighbors + [leaf]
         L = G.subgraph(leaf_sub)
-        L.nodes[leaf]["URL"] = "../config/" + leaf + ".txt"
+        L.nodes[leaf]["URL"] = f"../config/{leaf}.txt"
         for leaf_edge in L.edges:
             L.edges[leaf_edge]["label"] = L.edges[leaf_edge]["leaf_ptp"]
             L.edges[leaf_edge]["taillabel"] = L.edges[leaf_edge]["e_taillabel"]
@@ -122,8 +122,8 @@ def main() -> None:
 
         LG = nx.drawing.nx_agraph.to_agraph(L)
         LG.layout("dot")
-        nx.drawing.nx_agraph.write_dot(L, "diagrams/" + leaf + ".dot")
-        LG.draw("diagrams/" + leaf + ".svg", format="svg")
+        nx.drawing.nx_agraph.write_dot(L, f"diagrams/{leaf}.dot")
+        LG.draw(f"diagrams/{leaf}.svg", format="svg")
 
     # Parse Jinja2 template and save configuration for each node
     for sw in G.nodes:
