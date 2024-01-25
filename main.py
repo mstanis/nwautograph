@@ -6,11 +6,6 @@ import yaml
 import jinja2
 
 
-def get_range(my_range: str) -> list:
-    range_split = my_range.split("-")
-    return list(range(int(range_split[0]), int(range_split[1]) + 1))
-
-
 def main() -> None:
     # get configuration variables
     with open("etc/cfg.yml", "r") as cfg:
@@ -39,7 +34,7 @@ def main() -> None:
 
         G.add_node(
             spine_name,
-            label=spine_name + "\nlo0: " + spine_loopback + "\nAS:" + spine_as,
+            label=generate_label(spine_name, spine_loopback, spine_as),
             hostname=spine_name,
             role="spine",
             shape="box",
@@ -61,9 +56,10 @@ def main() -> None:
         leaf_name = "leaf" + str(i)
         leaf_loopback = str(loopbacks.pop(0))
         leaf_as = str(bgp_as_numbers.pop(0))
+
         G.add_node(
             leaf_name,
-            label=leaf_name + "\nlo0: " + leaf_loopback + "\nAS: " + leaf_as,
+            label=generate_label(leaf_name, leaf_loopback, leaf_as),
             hostname=leaf_name,
             role="leaf",
             shape="box",
@@ -137,6 +133,18 @@ def main() -> None:
 
         with open("config/" + sw + ".txt", "w") as config_o:
             config_o.write(templ.render(t_vars))
+
+
+def get_range(my_range: str) -> list:
+    range_split = my_range.split("-")
+    return list(range(int(range_split[0]), int(range_split[1]) + 1))
+
+
+def generate_label(name: str, loopback: str, asn: str) -> str:
+    label = f"{name}\n"
+    label += f"lo0: {loopback}\n"
+    label += f"as: {asn}\n"
+    return label
 
 
 if __name__ == "__main__":
