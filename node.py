@@ -44,7 +44,7 @@ class Node:
             arguments["fillcolor"] = "honeydew2"
             arguments["headport"] = "s"
             arguments["style"] = "filled"
-
+            arguments["URL"] = f"{self.name}.svg"
         return arguments
 
     def template_data(self):
