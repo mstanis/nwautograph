@@ -1,12 +1,12 @@
 hostname {{ hostname }}
 
-{% for interface in f_if_ip.keys() %}
+{% for interface in ip_interfaces %}
 interface eth{{ interface }}
 no switchport
-ip address {{ f_if_ip[interface] }}
+ip address {{ ip_interfaces[interface] }}
 {% endfor %}
 
 router bgp {{ asn }}
-{% for bgp_peer in bgp_neigh.keys() %}
-neighbor {{ bgp_peer }} remote-as {{ bgp_neigh[bgp_peer]}}
+{% for neighbor in bgp_neighbors %}
+neighbor {{ neighbor }} remote-as {{ bgp_neighbors[neighbor]}}
 {%- endfor %}
