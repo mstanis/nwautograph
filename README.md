@@ -12,13 +12,22 @@ In order to use it, you will need to install the following:
 - Graphviz
 - Pygraphviz (Python library)
 
+Install the prerequisites using the following command:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+(venv) $ pip install --upgrade pip
+(venv) $ pip install -r requirements.txt
+```
+*You may need to install additional pygraphviz packages*
+
 ## Features
 
 - Retrieves global variables from `etc/cfg.yml`.
 - Automatically allocates IP addresses and AS numbers.
 - Parses a template from `templates/switch.j2`.
 - Places rendered files in the diagrams/ and `config/` directories.
-- Leaves are 'clickable' in SVG file. Github will not display links in previe mode. Pleae clone the repository locally or right-click on `topology.svg` preview and select "Open image in new tab" 
+- Leaves are 'clickable' in SVG files; however, Github will not display links in the preview mode. Pleae clone the repository locally or right-click on `topology.svg` preview and select "Open image in new tab" 
 
 ## TODO
 - Implement some network topology logic in the configuration file, as currently everything is in the Python code.
