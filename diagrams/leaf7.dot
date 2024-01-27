@@ -5,19 +5,20 @@ strict digraph "" {
 		ordering=out
 	];
 	node [label="\N"];
-	spine2	[asn=65001,
-		bgp_neigh="{'10.0.0.3': '65002', '10.0.0.7': '65003', '10.0.0.11': '65004', '10.0.0.15': '65005', '10.0.0.19': '65006', '10.0.0.23': '65007', '\
-10.0.0.27': '65008', '10.0.0.31': '65009'}",
+	spine1	[asn=65000,
+		bgp_neigh="{'10.0.0.1': '65002', '10.0.0.5': '65003', '10.0.0.9': '65004', '10.0.0.13': '65005', '10.0.0.17': '65006', '10.0.0.21': '65007', '\
+10.0.0.25': '65008', '10.0.0.29': '65009'}",
 		constraint=false,
-		f_if_ip="{'eth1': '10.0.0.2/31', 'eth2': '10.0.0.6/31', 'eth3': '10.0.0.10/31', 'eth4': '10.0.0.14/31', 'eth5': '10.0.0.18/31', 'eth6': '\
-10.0.0.22/31', 'eth7': '10.0.0.26/31', 'eth8': '10.0.0.30/31'}",
-		f_int="[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]",
 		fillcolor=grey88,
 		fontsize=10,
-		hostname=spine2,
-		label="spine2
-lo0: 10.0.1.1/32
-AS:65001",
+		hostname=spine1,
+		if_ip="{'eth1': '10.0.0.0/31', 'eth2': '10.0.0.4/31', 'eth3': '10.0.0.8/31', 'eth4': '10.0.0.12/31', 'eth5': '10.0.0.16/31', 'eth6': '10.0.0.20/\
+31', 'eth7': '10.0.0.24/31', 'eth8': '10.0.0.28/31'}",
+		int="[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]",
+		label="spine1
+lo0: 10.0.1.0/32
+as: 65000
+",
 		rank="same; spine1; spine2; ",
 		role=spine,
 		shape=box,
@@ -26,52 +27,55 @@ AS:65001",
 	leaf7	[URL="../config/leaf7.txt",
 		asn=65008,
 		bgp_neigh="{'10.0.0.24': '65000', '10.0.0.26': '65001'}",
-		f_if_ip="{'eth49': '10.0.0.25/31', 'eth50': '10.0.0.27/31'}",
-		f_int="[51, 52]",
+		constraint=false,
 		fillcolor=honeydew2,
 		fontsize=10,
 		headport=s,
 		hostname=leaf7,
+		if_ip="{'eth49': '10.0.0.25/31', 'eth50': '10.0.0.27/31'}",
+		int="[51, 52]",
 		label="leaf7
 lo0: 10.0.1.8/32
-AS: 65008",
+as: 65008
+",
 		role=leaf,
 		shape=box,
 		style=filled];
-	spine2 -> leaf7	[arrowhead=none,
-		decorate=true,
-		e_headlabel="e50 ip: .27",
-		e_taillabel="e7 ip: .26",
-		fontsize=6,
-		headlabel="e50 ip: .27",
-		l_ptp="10.0.0.26/31",
-		label="10.0.0.26/31",
-		taillabel="e7 ip: .26"];
-	spine1	[asn=65000,
-		bgp_neigh="{'10.0.0.1': '65002', '10.0.0.5': '65003', '10.0.0.9': '65004', '10.0.0.13': '65005', '10.0.0.17': '65006', '10.0.0.21': '65007', '\
-10.0.0.25': '65008', '10.0.0.29': '65009'}",
-		constraint=false,
-		f_if_ip="{'eth1': '10.0.0.0/31', 'eth2': '10.0.0.4/31', 'eth3': '10.0.0.8/31', 'eth4': '10.0.0.12/31', 'eth5': '10.0.0.16/31', 'eth6': '10.0.0.20/\
-31', 'eth7': '10.0.0.24/31', 'eth8': '10.0.0.28/31'}",
-		f_int="[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]",
-		fillcolor=grey88,
-		fontsize=10,
-		hostname=spine1,
-		label="spine1
-lo0: 10.0.1.0/32
-AS:65000",
-		rank="same; spine1; spine2; ",
-		role=spine,
-		shape=box,
-		style="rounded,filled",
-		tailport=s];
 	spine1 -> leaf7	[arrowhead=none,
 		decorate=true,
 		e_headlabel="e49 ip: .25",
 		e_taillabel="e7 ip: .24",
 		fontsize=6,
 		headlabel="e49 ip: .25",
-		l_ptp="10.0.0.24/31",
 		label="10.0.0.24/31",
+		leaf_ptp="10.0.0.24/31",
 		taillabel="e7 ip: .24"];
+	spine2	[asn=65001,
+		bgp_neigh="{'10.0.0.3': '65002', '10.0.0.7': '65003', '10.0.0.11': '65004', '10.0.0.15': '65005', '10.0.0.19': '65006', '10.0.0.23': '65007', '\
+10.0.0.27': '65008', '10.0.0.31': '65009'}",
+		constraint=false,
+		fillcolor=grey88,
+		fontsize=10,
+		hostname=spine2,
+		if_ip="{'eth1': '10.0.0.2/31', 'eth2': '10.0.0.6/31', 'eth3': '10.0.0.10/31', 'eth4': '10.0.0.14/31', 'eth5': '10.0.0.18/31', 'eth6': '\
+10.0.0.22/31', 'eth7': '10.0.0.26/31', 'eth8': '10.0.0.30/31'}",
+		int="[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]",
+		label="spine2
+lo0: 10.0.1.1/32
+as: 65001
+",
+		rank="same; spine1; spine2; ",
+		role=spine,
+		shape=box,
+		style="rounded,filled",
+		tailport=s];
+	spine2 -> leaf7	[arrowhead=none,
+		decorate=true,
+		e_headlabel="e50 ip: .27",
+		e_taillabel="e7 ip: .26",
+		fontsize=6,
+		headlabel="e50 ip: .27",
+		label="10.0.0.26/31",
+		leaf_ptp="10.0.0.26/31",
+		taillabel="e7 ip: .26"];
 }

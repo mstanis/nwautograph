@@ -15,16 +15,16 @@
 <path fill="#e0e0e0" stroke="black" d="M410,-118C410,-118 342,-118 342,-118 336,-118 330,-112 330,-106 330,-106 330,-89 330,-89 330,-83 336,-77 342,-77 342,-77 410,-77 410,-77 416,-77 422,-83 422,-89 422,-89 422,-106 422,-106 422,-112 416,-118 410,-118"/>
 <text text-anchor="middle" x="376" y="-106" font-family="Times,serif" font-size="10.00">spine1</text>
 <text text-anchor="middle" x="376" y="-95" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.0/32</text>
-<text text-anchor="middle" x="376" y="-84" font-family="Times,serif" font-size="10.00">AS:65000</text>
+<text text-anchor="middle" x="376" y="-84" font-family="Times,serif" font-size="10.00">as: 65000</text>
 </g>
 <!-- leaf1 -->
 <g id="node2" class="node">
 <title>leaf1</title>
-<g id="a_node2"><a xlink:href="leaf1.svg" xlink:title="leaf1&#10;lo0: 10.0.1.2/32&#10;AS: 65002">
+<g id="a_node2"><a xlink:href="leaf1.svg" xlink:title="leaf1&#10;lo0: 10.0.1.2/32&#10;as: 65002&#10;">
 <polygon fill="#e0eee0" stroke="black" points="92,-41 0,-41 0,0 92,0 92,-41"/>
 <text text-anchor="middle" x="46" y="-29" font-family="Times,serif" font-size="10.00">leaf1</text>
 <text text-anchor="middle" x="46" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.2/32</text>
-<text text-anchor="middle" x="46" y="-7" font-family="Times,serif" font-size="10.00">AS: 65002</text>
+<text text-anchor="middle" x="46" y="-7" font-family="Times,serif" font-size="10.00">as: 65002</text>
 </a>
 </g>
 </g>
@@ -36,11 +36,11 @@
 <!-- leaf2 -->
 <g id="node3" class="node">
 <title>leaf2</title>
-<g id="a_node3"><a xlink:href="leaf2.svg" xlink:title="leaf2&#10;lo0: 10.0.1.3/32&#10;AS: 65003">
+<g id="a_node3"><a xlink:href="leaf2.svg" xlink:title="leaf2&#10;lo0: 10.0.1.3/32&#10;as: 65003&#10;">
 <polygon fill="#e0eee0" stroke="black" points="202,-41 110,-41 110,0 202,0 202,-41"/>
 <text text-anchor="middle" x="156" y="-29" font-family="Times,serif" font-size="10.00">leaf2</text>
 <text text-anchor="middle" x="156" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.3/32</text>
-<text text-anchor="middle" x="156" y="-7" font-family="Times,serif" font-size="10.00">AS: 65003</text>
+<text text-anchor="middle" x="156" y="-7" font-family="Times,serif" font-size="10.00">as: 65003</text>
 </a>
 </g>
 </g>
@@ -52,11 +52,11 @@
 <!-- leaf3 -->
 <g id="node4" class="node">
 <title>leaf3</title>
-<g id="a_node4"><a xlink:href="leaf3.svg" xlink:title="leaf3&#10;lo0: 10.0.1.4/32&#10;AS: 65004">
+<g id="a_node4"><a xlink:href="leaf3.svg" xlink:title="leaf3&#10;lo0: 10.0.1.4/32&#10;as: 65004&#10;">
 <polygon fill="#e0eee0" stroke="black" points="312,-41 220,-41 220,0 312,0 312,-41"/>
 <text text-anchor="middle" x="266" y="-29" font-family="Times,serif" font-size="10.00">leaf3</text>
 <text text-anchor="middle" x="266" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.4/32</text>
-<text text-anchor="middle" x="266" y="-7" font-family="Times,serif" font-size="10.00">AS: 65004</text>
+<text text-anchor="middle" x="266" y="-7" font-family="Times,serif" font-size="10.00">as: 65004</text>
 </a>
 </g>
 </g>
@@ -68,11 +68,11 @@
 <!-- leaf4 -->
 <g id="node5" class="node">
 <title>leaf4</title>
-<g id="a_node5"><a xlink:href="leaf4.svg" xlink:title="leaf4&#10;lo0: 10.0.1.5/32&#10;AS: 65005">
+<g id="a_node5"><a xlink:href="leaf4.svg" xlink:title="leaf4&#10;lo0: 10.0.1.5/32&#10;as: 65005&#10;">
 <polygon fill="#e0eee0" stroke="black" points="422,-41 330,-41 330,0 422,0 422,-41"/>
 <text text-anchor="middle" x="376" y="-29" font-family="Times,serif" font-size="10.00">leaf4</text>
 <text text-anchor="middle" x="376" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.5/32</text>
-<text text-anchor="middle" x="376" y="-7" font-family="Times,serif" font-size="10.00">AS: 65005</text>
+<text text-anchor="middle" x="376" y="-7" font-family="Times,serif" font-size="10.00">as: 65005</text>
 </a>
 </g>
 </g>
@@ -84,11 +84,11 @@
 <!-- leaf5 -->
 <g id="node6" class="node">
 <title>leaf5</title>
-<g id="a_node6"><a xlink:href="leaf5.svg" xlink:title="leaf5&#10;lo0: 10.0.1.6/32&#10;AS: 65006">
+<g id="a_node6"><a xlink:href="leaf5.svg" xlink:title="leaf5&#10;lo0: 10.0.1.6/32&#10;as: 65006&#10;">
 <polygon fill="#e0eee0" stroke="black" points="532,-41 440,-41 440,0 532,0 532,-41"/>
 <text text-anchor="middle" x="486" y="-29" font-family="Times,serif" font-size="10.00">leaf5</text>
 <text text-anchor="middle" x="486" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.6/32</text>
-<text text-anchor="middle" x="486" y="-7" font-family="Times,serif" font-size="10.00">AS: 65006</text>
+<text text-anchor="middle" x="486" y="-7" font-family="Times,serif" font-size="10.00">as: 65006</text>
 </a>
 </g>
 </g>
@@ -100,11 +100,11 @@
 <!-- leaf6 -->
 <g id="node7" class="node">
 <title>leaf6</title>
-<g id="a_node7"><a xlink:href="leaf6.svg" xlink:title="leaf6&#10;lo0: 10.0.1.7/32&#10;AS: 65007">
+<g id="a_node7"><a xlink:href="leaf6.svg" xlink:title="leaf6&#10;lo0: 10.0.1.7/32&#10;as: 65007&#10;">
 <polygon fill="#e0eee0" stroke="black" points="642,-41 550,-41 550,0 642,0 642,-41"/>
 <text text-anchor="middle" x="596" y="-29" font-family="Times,serif" font-size="10.00">leaf6</text>
 <text text-anchor="middle" x="596" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.7/32</text>
-<text text-anchor="middle" x="596" y="-7" font-family="Times,serif" font-size="10.00">AS: 65007</text>
+<text text-anchor="middle" x="596" y="-7" font-family="Times,serif" font-size="10.00">as: 65007</text>
 </a>
 </g>
 </g>
@@ -116,11 +116,11 @@
 <!-- leaf7 -->
 <g id="node8" class="node">
 <title>leaf7</title>
-<g id="a_node8"><a xlink:href="leaf7.svg" xlink:title="leaf7&#10;lo0: 10.0.1.8/32&#10;AS: 65008">
+<g id="a_node8"><a xlink:href="leaf7.svg" xlink:title="leaf7&#10;lo0: 10.0.1.8/32&#10;as: 65008&#10;">
 <polygon fill="#e0eee0" stroke="black" points="752,-41 660,-41 660,0 752,0 752,-41"/>
 <text text-anchor="middle" x="706" y="-29" font-family="Times,serif" font-size="10.00">leaf7</text>
 <text text-anchor="middle" x="706" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.8/32</text>
-<text text-anchor="middle" x="706" y="-7" font-family="Times,serif" font-size="10.00">AS: 65008</text>
+<text text-anchor="middle" x="706" y="-7" font-family="Times,serif" font-size="10.00">as: 65008</text>
 </a>
 </g>
 </g>
@@ -132,11 +132,11 @@
 <!-- leaf8 -->
 <g id="node9" class="node">
 <title>leaf8</title>
-<g id="a_node9"><a xlink:href="leaf8.svg" xlink:title="leaf8&#10;lo0: 10.0.1.9/32&#10;AS: 65009">
+<g id="a_node9"><a xlink:href="leaf8.svg" xlink:title="leaf8&#10;lo0: 10.0.1.9/32&#10;as: 65009&#10;">
 <polygon fill="#e0eee0" stroke="black" points="862,-41 770,-41 770,0 862,0 862,-41"/>
 <text text-anchor="middle" x="816" y="-29" font-family="Times,serif" font-size="10.00">leaf8</text>
 <text text-anchor="middle" x="816" y="-18" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.9/32</text>
-<text text-anchor="middle" x="816" y="-7" font-family="Times,serif" font-size="10.00">AS: 65009</text>
+<text text-anchor="middle" x="816" y="-7" font-family="Times,serif" font-size="10.00">as: 65009</text>
 </a>
 </g>
 </g>
@@ -151,7 +151,7 @@
 <path fill="#e0e0e0" stroke="black" d="M520,-118C520,-118 452,-118 452,-118 446,-118 440,-112 440,-106 440,-106 440,-89 440,-89 440,-83 446,-77 452,-77 452,-77 520,-77 520,-77 526,-77 532,-83 532,-89 532,-89 532,-106 532,-106 532,-112 526,-118 520,-118"/>
 <text text-anchor="middle" x="486" y="-106" font-family="Times,serif" font-size="10.00">spine2</text>
 <text text-anchor="middle" x="486" y="-95" font-family="Times,serif" font-size="10.00">lo0: 10.0.1.1/32</text>
-<text text-anchor="middle" x="486" y="-84" font-family="Times,serif" font-size="10.00">AS:65001</text>
+<text text-anchor="middle" x="486" y="-84" font-family="Times,serif" font-size="10.00">as: 65001</text>
 </g>
 <!-- spine2&#45;&gt;leaf1 -->
 <g id="edge9" class="edge">
